@@ -2,14 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Products.css'
 import Product from '../Product/Product';
 
-const Products = ({handleAddToCart}) => {
-    const [products, setProducts] = useState([]);
-    
-    useEffect(()=>{
-        fetch('products.json')
-        .then(res => res.json())
-        .then(data => setProducts(data))
-    } ,[])
+const Products = ({handleAddToCart, products}) => {
     return (
         <div className='products'>
             {
